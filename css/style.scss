@@ -1,3 +1,128 @@
-body {
-  background: gray;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&family=Roboto:wght@400;500;700&display=swap');
+// === Mixin ===
+@mixin roboto{
+  font-family: 'Roboto', sans-serif;
 }
+
+@mixin quicksand {
+  font-family: 'Quicksand', sans-serif;
+}
+// === / Mixin ===
+// === Variables ===
+ $fw-regular: 400;
+ $fw-medium: 500;
+ $fw-bold: 700;
+
+ $padding-vertical-xs: 20px;
+ $padding-vertical-sm: 60px;
+ $padding-vertical: 120px;
+
+ $color-divider: #d8e3fe;
+
+// === / Variables ===
+
+ // ===  COMMON ===
+
+body {
+  @include roboto;
+}
+.section-outer {
+  border-bottom: 1px solid $color-divider;
+}
+.section-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: $padding-vertical;
+  padding-bottom: $padding-vertical;
+  &--wide {
+    max-width: 1200px;
+  }
+}
+// === HEADER ===
+.section-header {
+  .section-inner {
+    padding-top: $padding-vertical-xs;
+    padding-bottom: $padding-vertical-xs;
+  }
+}
+
+// === / HEADER ===
+
+// === HERO-IMAGE ===
+.section-hero-image {
+  background-color: #f4f7ff;
+}
+
+// === / HERO-IMAGE ===
+
+// ===  CUSTOMERS ===
+.section-customers {
+  .section-inner {
+    padding-top: $padding-vertical-sm;
+    padding-bottom: $padding-vertical-sm;
+  }
+}
+
+// === / CUSTOMERS ===
+
+// === PLAN-AND-MANAGE ===
+.section-plan-and-manage {
+  background-color: #f5f8ff;
+}
+
+// === / PLAN-AND-MANAGE ===
+
+// === FEATURES ===
+
+.section-features {
+
+}
+
+// === / FEATURES ===
+
+// === STATS ===
+.section-stats {
+  background-color: #e9efff;
+}
+// === / STATS ===
+
+// === BLOG ===
+.section-blog {
+  background-color: #f5f8ff;
+}
+// === / BLOG ===
+
+// === QOUTES ===
+.section-qoutes {
+  background-color: #eaf0ff;
+}
+
+// === / QOUTES ===
+
+// === GET-START ===
+.section-get-start {
+  background-color: #6888ff;
+}
+// === / GET-START ===
+
+// === FAQ ===
+.section-faq {
+
+}
+// === / FAQ ===
+
+// === NEWSLETTER ===
+.section-newsletter{
+  background-color: #fcfdff;
+}
+// === / NEWSLETTER ===
+
+// === FOOTER ===
+.section-footer {
+  border-bottom: 0;
+  .section-inner {
+    padding-top: $padding-vertical-sm;
+    padding-bottom: $padding-vertical-sm;
+  }
+}
+// === / FOOTER ===
