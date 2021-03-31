@@ -33,9 +33,9 @@ body {
 }
 .section-inner {
   max-width: 900px;
-  margin: 0 auto;
   padding-top: $padding-vertical;
   padding-bottom: $padding-vertical;
+  margin: 0 auto;
   &--wide {
     max-width: 1200px;
   }
@@ -43,19 +43,20 @@ body {
 .btn {
   @include quicksand;
 
-  font-weight: $fw-bold;
-  font-size: 13px;
-  border-radius: 2px;
+
   padding: $base*3 $base*4;
+  border: 0;
   margin: 0;
   background-color: none;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: $fw-bold;
   text-decoration: none;
-  border: 0;
   transition: $transition;
 
   &--primary {
-    color: #3a79ff;
     background-color: #d2e1ff;
+    color: #3a79ff;
 
     &:hover {
       background-color: darken(#d2e1ff, 5% );
@@ -77,9 +78,9 @@ body {
 }
 
 .logo {
-  background-color: #5e81fe;
   width: $base * 6;
   height: $base * 6;
+  background-color: #5e81fe;
   border-radius: 100%;
 }
 
@@ -101,9 +102,9 @@ body {
     &-link {
       @include quicksand;
 
+      color: #697ca6;
       font-size: 12px;
       font-weight: $fw-medium;
-      color: #697ca6;
       text-decoration: none;
       transition: $transition;
 
@@ -112,8 +113,8 @@ body {
       }
 
       &--active {
-        font-weight: $fw-bold;
         color: #5e81fe;
+        font-weight: $fw-bold;
       }
     }
   }
