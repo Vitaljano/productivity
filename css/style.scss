@@ -116,8 +116,8 @@ h5 {
     height: $base * 2;
     background-color: #d1d6e3;
     border-radius: 100%;
-    transition: $transition;
     cursor: pointer;
+    transition: $transition;
 
     &--active{
       background-color: #5283ff;
@@ -289,8 +289,19 @@ h5 {
 // ===  CUSTOMERS ===
 .section-customers {
   .section-inner {
+    display: flex;
+    justify-content: space-between;
     padding-top: $padding-vertical-sm;
     padding-bottom: $padding-vertical-sm;
+    justify-items: center;
+    .customers__link {
+      opacity: .3;
+      transition: $transition;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 }
 
