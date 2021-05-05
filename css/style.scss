@@ -82,6 +82,15 @@ body {
     }
   }
 
+  &--danger {
+    background-color: #ffd7d7;
+    color: #d43f3f;
+
+    &:hover {
+      background-color: darken(#ffd7d7, 5% );
+    }
+  }
+
   &--no-bg {
     border: 1px solid #d1d1e4;
     color: #adb4d2;
@@ -124,16 +133,19 @@ h6 {
 
 h1,
 h2 {
-  margin-bottom: $base * 7 ;
+  margin-bottom: $base * 7;
   font-size: 48px;
 }
 
 h3 {
-  margin-bottom: $base * 7 ;
+  margin-bottom: $base * 7;
   font-size: 36px;
 }
 
-h4 { font-size: 24px; }
+h4 {
+  margin-bottom: $base * 20;
+  font-size: 24px;
+}
 h5 {
   @include roboto;
 
@@ -344,6 +356,7 @@ h5 {
 // === PLAN-AND-MANAGE ===
 .section-plan-and-manage {
   position: relative;
+  overflow: hidden;
   background-color: #f5f8ff;
 
   &--content {
@@ -377,10 +390,93 @@ h5 {
 
 // === FEATURES ===
 
-// .section-features {
+.section-features {
+  background-image: url('../img/bg-feature-clouds.svg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
 
-// }
+  h4 {
+    font-weight: $fw-medium;
+  }
 
+  .btns {
+    display: flex;
+    justify-content: center;
+  }
+}
+.features-list {
+  display: flex;
+  padding: 0;
+  margin: 0 0 $base*25;
+  list-style: none;
+  text-align: center;
+
+  &__item {
+    position:relative;
+    flex-basis: 25%;
+
+    &:not(:first-child){
+      margin-left: $base*10;
+    }
+    &:not(:first-child)::before {
+      position: absolute;
+      top:120px;
+      right: 100%;
+      left: -34px;
+      width: 28px;
+      height: 1px;
+      background-color: #dae4fe;
+      content: '';
+    }
+
+    &-icon {
+      display: flex;
+      width: $base * 17;
+      height: $base * 17;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto $base * 4;
+      background-color: #f1f5ff;
+      border-radius: 100%;
+    }
+
+    &-title {
+      margin-bottom: $base * 7;
+      color: #4074f8;
+      font-size: $fs-md;
+      font-weight: $fw-bold;
+    }
+
+    &-text {
+      line-height: 2;
+    }
+  }
+}
+
+.or-block {
+  display: inline-flex;
+  align-items: center;
+  margin:0 $base*4;
+  font-size: $fs-sm;
+  font-weight: $fw-medium;
+
+  &::before,
+  &::after{
+    display: block;
+    width: $base*4;
+    height: 1px;
+    background-color: #dae4fe;
+    content: '';
+  }
+
+  &::before{
+    margin-right: $base*4;
+  }
+
+  &::after{
+    margin-left: $base*4;
+  }
+}
 // === / FEATURES ===
 
 // === STATS ===
