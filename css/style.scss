@@ -17,6 +17,8 @@ $fw-bold: 700;
 
 $fs-sm: 13px;
 $fs-md: 15px;
+$fs-lg: 18px;
+$fs-xl: 48px;
 
 $padding-vertical-xs: $base * 5;
 $padding-vertical-sm: $base * 15;
@@ -481,7 +483,44 @@ h5 {
 
 // === STATS ===
 .section-stats {
+  display: flex;
   background-color: #e9efff;
+  &__left,
+  &__right {
+    @include quicksand;
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+    padding: $base*16 $base*22;
+  }
+
+  &__left {
+    align-items: flex-end;
+    background-color: #6888ff;
+    color:#ffffff;
+    text-align: right;
+  }
+
+  &__right {
+    color:  #5e80ff;
+  }
+
+  &__icon {
+    margin-bottom: $base*6;
+  }
+
+  &__number {
+    margin-bottom: $base*7;
+    font-size: $fs-xl;
+
+  }
+
+  &__text {
+    width: 35%;
+    font-size: $fs-lg;
+    font-weight: $fw-medium;
+    line-height: 1.5;
+  }
 }
 // === / STATS ===
 
