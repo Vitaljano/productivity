@@ -658,10 +658,56 @@ h5 {
 // === / BLOG ===
 
 // === QOUTES ===
-.section-qoutes {
-  background-color: #eaf0ff;
+.section-quotes {
+  background: linear-gradient(#eaebff, #f6f9ff);
+
+  .section-inner {
+    display: flex;
+    justify-content: space-between;
+   }
+  &__left,
+  &__right {
+    flex-basis: 45%;
+  }
+
+  &__left {
+    .text {
+      line-height: 2;
+    }
+  }
 }
 
+.slider-quotes {
+  @include list-null;
+  margin-bottom: $base*20;
+
+  &__item {
+    position: relative;
+    padding: $base*10 $base*17 $base*15;
+    border: 1px solid #d8e3fe;
+    background-color: #fff;
+    box-shadow: 0 5px 50px #f3f5fa;
+    &-text {
+      color: #676f95;
+      font-size: $fs-md;
+      line-height: 2;
+    }
+    &-photo {
+      $height:$base*15;
+
+      position: absolute;
+      top:100%;
+      left: 50%;
+      overflow: hidden;
+      width: $base*15;
+      height: $height;
+      margin-top: -$height/2;
+      background-color: #fff;
+      border-radius: 100%;
+      transform: translateX(-50%);
+    }
+  }
+}
 // === / QOUTES ===
 
 // === GET-START ===
