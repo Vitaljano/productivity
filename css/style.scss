@@ -61,7 +61,7 @@ body {
 .btn {
   @include quicksand;
 
-
+  display: inline-block;
   padding: $base*3 $base*4;
   border: 0;
   border: 1px solid transparent;
@@ -72,6 +72,7 @@ body {
   font-weight: $fw-bold;
   text-decoration: none;
   transition: $transition;
+  white-space: nowrap;
   &--primary {
     background-color: #d2e1ff;
     color: #3a79ff;
@@ -96,6 +97,15 @@ body {
 
     &:hover {
       background-color: darken(#ffd7d7, 5% );
+    }
+  }
+
+  &--grayscale {
+    background-color: #e8ecf4;
+    color: #7382A3;
+
+    &:hover {
+      background-color: darken(#e8ecf4, 5%);
     }
   }
 
@@ -159,6 +169,7 @@ h5 {
 
   margin-bottom: $base * 4;
   font-size: 10px;
+  text-transform: uppercase;
 }
 
 .ta-c {
@@ -710,18 +721,85 @@ h5 {
 }
 // === / QOUTES ===
 
+// === FAQ ===
+.section-faq {
+  h4 {
+    font-weight: $fw-medium;
+  }
+ }
+
+ .faq-accordion {
+   @include list-null();
+
+   &__item {
+    $parent: &;
+
+    border-bottom: 1px solid #d8e3fe;
+
+    &--active {
+
+      #{$parent}-triger {
+        color: #495274;
+        font-weight: $fw-medium;
+
+        &-icon {
+          transform: rotate(0);
+
+          .faq-arrow {
+            stroke: #495274;
+          }
+        }
+      }
+
+      #{$parent}-content {
+        display: flex;
+      }
+    }
+
+    &-triger{
+      display: flex;
+      padding: $base*4;
+      cursor: pointer;
+
+      &-icon{
+        width: $base*4;
+        margin-right: $base*4;
+        text-align: center;
+        transform: rotate(180deg);
+        .faq-arrow {
+          stroke:#8e96b7;
+        }
+      }
+
+      &-text{
+        font-size: $fs-md;
+      }
+    }
+
+    &-content{
+      display: none;
+      padding: 0 $base*4 $base*4 $base*12;
+
+      &-text {
+        flex-grow: 1;
+        font-size: $fs-md;
+        line-height: 2;
+      }
+
+      &-btn {
+        margin-left: $base*15;
+      }
+    }
+   }
+
+ }
+// === / FAQ ===
+
 // === GET-START ===
 .section-get-start {
   background-color: #6888ff;
 }
 // === / GET-START ===
-
-// === FAQ ===
-// .section-faq {
-
-// }
-// === / FAQ ===
-
 // === NEWSLETTER ===
 .section-newsletter{
   background-color: #fcfdff;
