@@ -64,14 +64,14 @@ body {
   padding: $base*3 $base*4;
   border: 1px solid transparent;
   background-color: #efeff7;
-  border-radius: 2px;
+  border-radius: $base/2;
   color: #7a85ad;
   font-size: $fs-sm;
   font-weight: $fw-bold;
 
   &--size-lg {
     padding: $base*5 $base*6;
-    border-radius: 5px;
+    border-radius: $base;
   }
 }
 .btn {
@@ -83,7 +83,7 @@ body {
   border: 1px solid transparent;
   margin: 0;
   background: none;
-  border-radius: 2px;
+  border-radius: $base/2;
   cursor: pointer;
   font-size: $fs-sm;
   font-weight: $fw-bold;
@@ -93,7 +93,7 @@ body {
 
   &--size-lg {
     padding: $base*5 $base*15;
-    border-radius: 5px;
+    border-radius: $base;
   }
 
   &--primary {
@@ -379,7 +379,7 @@ h5 {
   justify-content: center;
   background-color: #ffffff;
   border-radius: 100%;
-  box-shadow: 0 10px 50px rgba(#c9d1e7, .6);
+  box-shadow: 0 $base*2 $base*12 rgba(#c9d1e7, .6);
 
   svg {
     width: $base * 3;
@@ -468,6 +468,9 @@ h5 {
   text-align: center;
 
   &__item {
+    $margin-left: $base * 10;
+    $divider-width: $base * 7;
+
     position:relative;
     flex-basis: 25%;
 
@@ -476,10 +479,10 @@ h5 {
     }
     &:not(:first-child)::before {
       position: absolute;
-      top:120px;
+      top: $base* 30;
       right: 100%;
-      left: -34px;
-      width: 28px;
+      left: -$divider-width - ($margin-left - $divider-width)/2;
+      width: $divider-width;
       height: 1px;
       background-color: #dae4fe;
       content: '';
@@ -594,7 +597,7 @@ h5 {
   border: 1px solid #d8e3fe;
 
   background-color: #fff;
-  box-shadow: 0 15px 50px #eff4ff;
+  box-shadow: 0 $base*4 $base*12 #eff4ff;
 
   &__item {
     display: flex;
@@ -607,16 +610,16 @@ h5 {
 
     &-gallery {
       display: grid;
-      grid-gap: 12px;
-      grid-template-columns: repeat(3, 120px);
-      grid-template-rows: repeat(2, 120px);
+      grid-gap: $base*3;
+      grid-template-columns: repeat(3, $base*30);
+      grid-template-rows: repeat(2, $base*30);
 
       .image-link {
         position: relative;
         display: block;
         overflow: hidden;
-        border-radius: 5px;
-        box-shadow: 0 15px 100px #e5ebf8;
+        border-radius: $base;
+        box-shadow: 0 $base*4 $base*25 #e5ebf8;
 
         .loupe {
           position: absolute;
@@ -738,7 +741,7 @@ h5 {
     padding: $base*10 $base*17 $base*15;
     border: 1px solid #d8e3fe;
     background-color: #fff;
-    box-shadow: 0 5px 50px #f3f5fa;
+    box-shadow: 0 $base $base*12 #f3f5fa;
     &-text {
       color: #676f95;
       font-size: $fs-md;
@@ -909,10 +912,10 @@ h5 {
   .newsletter-form {
     display: flex;
 
-    .input {
+    &__input {
       flex-grow: 1;
     }
-    .btn {
+    &__btn {
       margin-left: $base*3;
     }
   }
