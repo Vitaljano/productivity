@@ -32,9 +32,45 @@ $padding-vertical: $base * 30;
 
 $transition: .2s;
 
-$color-divider: #d8e3fe;
-$color-primary: #697ca6;
-$color-secondary: #6188ff;
+
+
+// cyan
+$color-cyan: #35aaff;
+
+// $color-primary: #697ca6;
+// $color-secondary: #6188ff;
+
+$white : #ffffff;
+//warning color
+$color-warning: #ffc735;
+// danger color
+$color-danger-400: #ffd7d7;
+$color-danger-500: #ff3535;
+$color-danger-600: #d43f3f;
+// Gray
+$color-primary-50: #f5f8ff;
+$color-primary-100: #c7d3ff;
+$color-primary-200: #aeb8d0;
+$color-primary-300: #adb4d2;
+$color-primary-400: #8e96b7;
+$color-primary-500: #8996bd;
+$color-primary-600: #7382a3;
+$color-primary-700: #7a85ad;
+$color-primary-800: #676f95;
+$color-primary-900: #495274;
+
+// Blue
+
+$color-secondary-50:#e9efff;
+$color-secondary-100:#6888ff;
+$color-secondary-200:#6188ff;
+$color-secondary-300:#5e80ff;
+$color-secondary-400:#5e81fe;
+$color-secondary-500:#4c85ff;
+$color-secondary-600:#5283ff;
+$color-secondary-700:#3a79ff;
+$color-secondary-800:#4074f8;
+$color-secondary-900:#3d4f9f;
 
 
 // === / Variables ===
@@ -44,10 +80,10 @@ $color-secondary: #6188ff;
 body {
   @include roboto;
 
-  color: #8d96bd
+  color: $color-primary-400
 }
 .section-outer {
-  border-bottom: 1px solid $color-divider;
+  border-bottom: 1px solid $color-primary-100;
 }
 .section-inner {
   max-width: 900px;
@@ -65,7 +101,7 @@ body {
   border: 1px solid transparent;
   background-color: #efeff7;
   border-radius: $base/2;
-  color: #7a85ad;
+  color:$color-primary-400;
   font-size: $fs-sm;
   font-weight: $fw-bold;
 
@@ -97,65 +133,65 @@ body {
   }
 
   &--primary {
-    background-color: #d2e1ff;
-    color: #3a79ff;
+    background-color: $color-secondary-50;
+    color: $color-secondary-700;
 
     &:hover {
-      background-color: darken(#d2e1ff, 5% );
+      background-color: darken($color-secondary-50, 5% );
     }
   }
 
   &--secondary {
-    background-color: #4c85ff;
-    color: #ffffff;
+    background-color:$color-secondary-500;
+    color: $white;
 
     &:hover {
-      background-color: darken(#4c85ff, 5%);
+      background-color: darken($color-secondary-500, 5%);
     }
     &-inverted {
-      background-color: #fff;
-      color: #565F82;
+      background-color: $white;
+      color: $color-primary-800;
 
       &:hover {
-        background-color: darken(#fff, 5%);
+        background-color: darken($white, 5%);
       }
     }
   }
 
   &--danger {
-    background-color: #ffd7d7;
-    color: #d43f3f;
+    background-color: $color-danger-400;
+    color: $color-danger-600;
 
     &:hover {
-      background-color: darken(#ffd7d7, 5% );
+      background-color: darken($color-danger-400, 5% );
     }
   }
 
   &--grayscale {
-    background-color: #e8ecf4;
-    color: #7382A3;
+    background-color: $color-primary-200;
+    color: $color-primary-600;
 
     &:hover {
-      background-color: darken(#e8ecf4, 5%);
+      background-color: darken($color-primary-300, 5%);
     }
   }
 
   &--no-bg {
-    border: 1px solid #d1d1e4;
-    color: #adb4d2;
+    border: 1px solid $color-primary-300;
+    color: $color-primary-300;
 
     &:hover {
-      border: 1px solid  darken(#adb4d2, 10%);
-      color: darken(#adb4d2, 10%);
+      border: 1px solid  darken($color-primary-300, 10%);
+      color: darken($color-primary-300, 10%);
     }
 
     &-inverted {
-      border: 1px solid #a0b4ff;
-      color: #c7d3ff;
+      border: 1px solid $color-secondary-50;
+      color: $color-secondary-50;
 
       &:hover {
-        border: 1px solid  lighten(#a0b4ff, 10%);
-        color: lighten(#adb4d2, 20%);
+        border: 1px solid  lighten($color-secondary-100, 10%);
+        color: lighten($color-primary-300, 20%);
       }
     }
   }
@@ -186,7 +222,7 @@ h6 {
 
   padding: 0;
   margin: 0;
-  color: #3d4f9f;
+  color: $color-secondary-900;
   font-weight: $fw-regular;
 }
 
@@ -227,13 +263,13 @@ h5 {
     display: inline-flex;
     width: $base * 2;
     height: $base * 2;
-    background-color: #d1d6e3;
+    background-color: $color-primary-200;
     border-radius: 100%;
     cursor: pointer;
     transition: $transition;
 
     &--active{
-      background-color: #5283ff;
+      background-color: $color-secondary-500;
     }
 
     & + & {
@@ -258,7 +294,7 @@ h5 {
 .logo {
   width: $base * 6;
   height: $base * 6;
-  background-color: #5e81fe;
+  background-color: $color-secondary-400;
   border-radius: 100%;
 }
 
@@ -280,7 +316,7 @@ h5 {
     &-link {
       @include quicksand;
 
-      color: $color-primary;
+      color: $color-primary-500;
       font-size: $fs-sm;
       font-weight: $fw-medium;
       text-decoration: none;
@@ -291,7 +327,7 @@ h5 {
       }
 
       &--active {
-        color: #5e81fe;
+        color: $color-secondary-400;
         font-weight: $fw-bold;
       }
     }
@@ -315,13 +351,13 @@ h5 {
 
     &-link {
       path {
-        fill: $color-primary;
+        fill: $color-primary-500;
         transition: $transition;
       }
 
       &:hover{
         path {
-          fill: $color-secondary;
+          fill: $color-secondary-500;
         }
       }
 
@@ -336,7 +372,7 @@ h5 {
 // === HERO-IMAGE ===
 .section-hero-image {
   position: relative;
-  background-color: #f4f7ff;
+  background-color: $color-primary-50;
 
   .dots {
     position: absolute;
@@ -377,9 +413,9 @@ h5 {
   height: $base *  13;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff;
+  background-color: $white;
   border-radius: 100%;
-  box-shadow: 0 $base*2 $base*12 rgba(#c9d1e7, .6);
+  box-shadow: 0 $base*2 $base*12 rgba($color-primary-200, .6);
 
   svg {
     width: $base * 3;
@@ -413,7 +449,7 @@ h5 {
 .section-plan-and-manage {
   position: relative;
   overflow: hidden;
-  background-color: #f5f8ff;
+  background-color: $color-primary-50;
 
   &--content {
     width: 50%;
@@ -484,7 +520,7 @@ h5 {
       left: -$divider-width - ($margin-left - $divider-width)/2;
       width: $divider-width;
       height: 1px;
-      background-color: #dae4fe;
+      background-color: $color-primary-100;
       content: '';
     }
 
@@ -495,13 +531,13 @@ h5 {
       align-items: center;
       justify-content: center;
       margin: 0 auto $base * 4;
-      background-color: #f1f5ff;
+      background-color: $color-primary-50;
       border-radius: 100%;
     }
 
     &-title {
       margin-bottom: $base * 7;
-      color: #4074f8;
+      color: $color-secondary-800;
       font-size: $fs-md;
       font-weight: $fw-bold;
     }
@@ -524,7 +560,7 @@ h5 {
     display: block;
     width: $base*4;
     height: 1px;
-    background-color: #dae4fe;
+    background-color: $color-secondary-50;
     content: '';
   }
 
@@ -541,7 +577,7 @@ h5 {
 // === STATS ===
 .section-stats {
   display: flex;
-  background-color: #e9efff;
+  background-color: $color-secondary-50;
   &__left,
   &__right {
     @include quicksand;
@@ -553,13 +589,13 @@ h5 {
 
   &__left {
     align-items: flex-end;
-    background-color: #6888ff;
-    color:#ffffff;
+    background-color: $color-secondary-700;
+    color:$white;
     text-align: right;
   }
 
   &__right {
-    color:  #5e80ff;
+    color:  $color-secondary-300;
   }
 
   &__icon {
@@ -583,7 +619,7 @@ h5 {
 
 // === BLOG ===
 .section-blog {
-  background-color: #f5f8ff;
+  background-color: $color-primary-50;
 }
 
 .slider-wrapper {
@@ -594,10 +630,10 @@ h5 {
 .slider-blog {
   @include list-null;
 
-  border: 1px solid #d8e3fe;
+  border: 1px solid $color-primary-100;
 
-  background-color: #fff;
-  box-shadow: 0 $base*4 $base*12 #eff4ff;
+  background-color: $white;
+  box-shadow: 0 $base*4 $base*12 $color-primary-100;
 
   &__item {
     display: flex;
@@ -611,15 +647,15 @@ h5 {
     &-gallery {
       display: grid;
       grid-gap: $base*3;
-      grid-template-columns: repeat(3, $base*30);
-      grid-template-rows: repeat(2, $base*30);
+      grid-template-columns: repeat(3, );
+      grid-template-rows: repeat(2, 120px);
 
       .image-link {
         position: relative;
         display: block;
         overflow: hidden;
-        border-radius: $base;
-        box-shadow: 0 $base*4 $base*25 #e5ebf8;
+        border-radius: 5px;
+        box-shadow: 0 15px 100px $color-primary-50;
 
         .loupe {
           position: absolute;
@@ -628,7 +664,7 @@ h5 {
           display: block;
           width: $base*16;
           height: $base*16;
-          background: #fff url("../img/icon-loupe.svg") no-repeat 50% 50%;
+          background: $white url("../img/icon-loupe.svg") no-repeat 50% 50%;
           border-radius: 100%;
           opacity: 0;
           transform: translate(-50%, -50%);
@@ -661,21 +697,21 @@ h5 {
           grid-column: 1 / 3;
           grid-row: 1 / 3;
           &::before{
-            background: linear-gradient(transparent, #ffc735);
+            background: linear-gradient(transparent, $color-warning);
           }
         }
         &--s-1 {
           grid-column: 3 / 4;
           grid-row: 1 / 2;
           &::before{
-            background: linear-gradient(transparent, #ff3535);
+            background: linear-gradient(transparent, $color-danger-500);
           }
         }
         &--s-2 {
           grid-column: 3 / 4;
           grid-row: 2 / 3 ;
           &::before{
-            background: linear-gradient(transparent, #35aaff);
+            background: linear-gradient(transparent, $color-cyan);
           }
         }
       }
@@ -714,7 +750,7 @@ h5 {
 
 // === QOUTES ===
 .section-quotes {
-  background: linear-gradient(#eaebff, #f6f9ff);
+  background: linear-gradient(#f6f9ff, #eaf0ff);
 
   .section-inner {
     display: flex;
@@ -739,11 +775,11 @@ h5 {
   &__item {
     position: relative;
     padding: $base*10 $base*17 $base*15;
-    border: 1px solid #d8e3fe;
-    background-color: #fff;
-    box-shadow: 0 $base $base*12 #f3f5fa;
+    border: 1px solid $color-primary-100;
+    background-color: $white;
+    box-shadow: 0 5px 50px $color-primary-100;
     &-text {
-      color: #676f95;
+      color: $color-primary-700;
       font-size: $fs-md;
       line-height: 2;
     }
@@ -757,7 +793,7 @@ h5 {
       width: $base*15;
       height: $height;
       margin-top: -$height/2;
-      background-color: #fff;
+      background-color: $white;
       border-radius: 100%;
       transform: translateX(-50%);
     }
@@ -778,19 +814,19 @@ h5 {
    &__item {
     $parent: &;
 
-    border-bottom: 1px solid #d8e3fe;
+    border-bottom: 1px solid $color-primary-100;
 
     &--active {
 
       #{$parent}-triger {
-        color: #495274;
+        color: $color-primary-900;
         font-weight: $fw-medium;
 
         &-icon {
           transform: rotate(0);
 
           .faq-arrow {
-            stroke: #495274;
+            stroke: $color-primary-900;
           }
         }
       }
@@ -811,7 +847,7 @@ h5 {
         text-align: center;
         transform: rotate(180deg);
         .faq-arrow {
-          stroke:#8e96b7;
+          stroke:$color-primary-400;
         }
       }
 
@@ -842,8 +878,8 @@ h5 {
 // === GET-START ===
 .section-get-start {
   position:relative;
-  background: linear-gradient(#6888FF, #5E80FF);
-  color: #ffffff;
+  background: linear-gradient($color-secondary-700, $color-secondary-800);
+  color: $white;
   text-align:center;
   &::before {
     position: absolute;
@@ -864,7 +900,7 @@ h5 {
 
   h5,
   h2 {
-    color: #ffffff;
+    color: $white;
   }
   h2 {
     font-weight: $fw-light;
@@ -883,7 +919,7 @@ h5 {
 // === / GET-START ===
 // === NEWSLETTER ===
 .section-newsletter{
-  background-color: #fcfdff;
+  background-color: $color-primary-50;
   .section-inner {
     display: flex;
     justify-content: space-between;
@@ -895,7 +931,7 @@ h5 {
       @include quicksand();
 
       margin-bottom: $base*4;
-      color: #3d4f9f;
+      color: $color-secondary-900;
       font-size: $fs-lg;
       font-weight: $fw-bold;
     }
@@ -935,7 +971,7 @@ h5 {
   @include quicksand;
   margin-top: $base * 7;
   margin-left: $base * 24;
-  color: #aeb8d0;
+  color: $color-primary-300;
   font-size: $fs-sm;
   font-weight: $fw-medium;
 }
