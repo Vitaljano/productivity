@@ -679,7 +679,7 @@ h4 {
         border-radius: 5px;
         box-shadow: 0 15px 100px $color-primary-50;
 
-        .loupe {
+        &::after {
           position: absolute;
           top: 50%;
           left: 50%;
@@ -688,15 +688,14 @@ h4 {
           height: $base*16;
           background: $white url("../img/icon-loupe.svg") no-repeat 50% 50%;
           border-radius: 100%;
+          content: "";
           opacity: 0;
           transform: translate(-50%, -50%);
           transition: $transition;
         }
 
-        &:hover {
-          .loupe {
+        &:hover::after {
             opacity: 1;
-          }
         }
 
         img {
