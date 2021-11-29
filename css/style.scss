@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap");
 // === Mixin ===
-@mixin roboto{
-  font-family: 'Roboto', sans-serif;
+@mixin roboto {
+  font-family: "Roboto", sans-serif;
 }
 
 @mixin quicksand {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 @mixin list-null {
@@ -21,18 +21,19 @@ $fw-regular: 400;
 $fw-medium: 500;
 $fw-bold: 700;
 
-$fs-sm: 13px;
-$fs-md: 15px;
-$fs-lg: 18px;
-$fs-xl: 48px;
+$fs-xxs: 10px;
+$fs-xs: 13px;
+$fs-s: 15px;
+$fs-m: 18px;
+$fs-l: 24px;
+$fs-xl: 36px;
+$fs-xxl: 48px;
 
 $padding-vertical-xs: $base * 5;
 $padding-vertical-sm: $base * 15;
 $padding-vertical: $base * 30;
 
-$transition: .2s;
-
-
+$transition: 0.2s;
 
 // cyan
 $color-cyan: #35aaff;
@@ -40,7 +41,7 @@ $color-cyan: #35aaff;
 // $color-primary: #697ca6;
 // $color-secondary: #6188ff;
 
-$white : #ffffff;
+$white: #ffffff;
 //warning color
 $color-warning: #ffc735;
 // danger color
@@ -61,29 +62,29 @@ $color-primary-900: #495274;
 
 // Blue
 
-$color-secondary-50:#e9efff;
-$color-secondary-100:#6888ff;
-$color-secondary-200:#6188ff;
-$color-secondary-300:#5e80ff;
-$color-secondary-400:#5e81fe;
-$color-secondary-500:#4c85ff;
-$color-secondary-600:#5283ff;
-$color-secondary-700:#3a79ff;
-$color-secondary-800:#4074f8;
-$color-secondary-900:#3d4f9f;
-
+$color-secondary-50: #e9efff;
+$color-secondary-100: #6888ff;
+$color-secondary-200: #6188ff;
+$color-secondary-300: #5e80ff;
+$color-secondary-400: #5e81fe;
+$color-secondary-500: #4c85ff;
+$color-secondary-600: #5283ff;
+$color-secondary-700: #3a79ff;
+$color-secondary-800: #4074f8;
+$color-secondary-900: #3d4f9f;
 
 // === / Variables ===
 
- // ===  COMMON ===
+// ===  COMMON ===
 
 body {
   @include roboto;
 
-  color: $color-primary-400
+  color: $color-primary-400;
 }
 
 .section-outer {
+  padding: 0 $base * 5;
   border-bottom: 1px solid $color-primary-100;
 }
 
@@ -102,7 +103,7 @@ body {
 
   margin-bottom: $base * 20;
   color: $color-secondary-900;
-  font-size: 24px;
+  font-size: $fs-l;
   font-weight: $fw-medium;
 }
 
@@ -117,16 +118,16 @@ body {
 .input {
   @include quicksand();
 
-  padding: $base*3 $base*4;
+  padding: $base * 3 $base * 4;
   border: 1px solid transparent;
   background-color: #efeff7;
   border-radius: $base/2;
-  color:$color-primary-400;
-  font-size: $fs-sm;
+  color: $color-primary-400;
+  font-size: $fs-xs;
   font-weight: $fw-bold;
 
   &--size-lg {
-    padding: $base*5 $base*6;
+    padding: $base * 5 $base * 6;
     border-radius: $base;
   }
 }
@@ -134,21 +135,21 @@ body {
   @include quicksand;
 
   display: inline-block;
-  padding: $base*3 $base*4;
+  padding: $base * 3 $base * 4;
   border: 0;
   border: 1px solid transparent;
   margin: 0;
   background: none;
   border-radius: $base/2;
   cursor: pointer;
-  font-size: $fs-sm;
+  font-size: $fs-xs;
   font-weight: $fw-bold;
   text-decoration: none;
   transition: $transition;
   white-space: nowrap;
 
   &--size-lg {
-    padding: $base*5 $base*15;
+    padding: $base * 5 $base * 15;
     border-radius: $base;
   }
 
@@ -157,12 +158,12 @@ body {
     color: $color-secondary-700;
 
     &:hover {
-      background-color: darken($color-secondary-50, 5% );
+      background-color: darken($color-secondary-50, 5%);
     }
   }
 
   &--secondary {
-    background-color:$color-secondary-500;
+    background-color: $color-secondary-500;
     color: $white;
 
     &:hover {
@@ -183,7 +184,7 @@ body {
     color: $color-danger-600;
 
     &:hover {
-      background-color: darken($color-danger-400, 5% );
+      background-color: darken($color-danger-400, 5%);
     }
   }
 
@@ -201,7 +202,7 @@ body {
     color: $color-primary-300;
 
     &:hover {
-      border: 1px solid  darken($color-primary-300, 10%);
+      border: 1px solid darken($color-primary-300, 10%);
       color: darken($color-primary-300, 10%);
     }
 
@@ -210,7 +211,7 @@ body {
       color: $color-secondary-50;
 
       &:hover {
-        border: 1px solid  lighten($color-secondary-100, 10%);
+        border: 1px solid lighten($color-secondary-100, 10%);
         color: lighten($color-primary-300, 20%);
       }
     }
@@ -220,13 +221,12 @@ body {
 .btn-group {
   display: inline-flex;
 
-
-  .btn:nth-child(1){
+  .btn:nth-child(1) {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
   }
 
-  .btn:nth-child(2){
+  .btn:nth-child(2) {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
   }
@@ -246,7 +246,6 @@ h6 {
   font-weight: $fw-regular;
 }
 
-
 // h2 {
 //   margin-bottom: $base * 7;
 //   font-size: 48px;
@@ -255,7 +254,7 @@ h2 {
   @include roboto;
 
   margin-bottom: $base * 4;
-  font-size: 10px;
+  font-size: $fs-xxs;
   text-transform: uppercase;
 }
 
@@ -266,9 +265,8 @@ h3 {
 
 h4 {
   margin-bottom: $base * 20;
-  font-size: 24px;
+  font-size: $fs-l;
 }
-
 
 .ta-c {
   text-align: center;
@@ -289,7 +287,7 @@ h4 {
     cursor: pointer;
     transition: $transition;
 
-    &--active{
+    &--active {
       background-color: $color-secondary-500;
     }
 
@@ -298,7 +296,7 @@ h4 {
     }
   }
 }
- // === / COMMON ===
+// === / COMMON ===
 // === HEADER ===
 .section-header {
   .section-inner {
@@ -328,7 +326,6 @@ h4 {
 
   display: flex;
 
-
   &__item {
     & + & {
       margin-left: $base * 10;
@@ -338,12 +335,12 @@ h4 {
       @include quicksand;
 
       color: $color-primary-500;
-      font-size: $fs-sm;
+      font-size: $fs-xs;
       font-weight: $fw-medium;
       text-decoration: none;
       transition: $transition;
 
-      &:hover{
+      &:hover {
         text-decoration: underline;
       }
 
@@ -355,7 +352,7 @@ h4 {
   }
 }
 
-.socials{
+.socials {
   margin-left: auto;
 }
 
@@ -376,12 +373,11 @@ h4 {
         transition: $transition;
       }
 
-      &:hover{
+      &:hover {
         path {
           fill: $color-secondary-500;
         }
       }
-
     }
   }
 }
@@ -393,6 +389,7 @@ h4 {
 // === HERO-IMAGE ===
 .section-hero-image {
   position: relative;
+  padding: 0;
   background-color: $color-primary-50;
 
   .dots {
@@ -415,7 +412,7 @@ h4 {
 
     &-content {
       .section-subtitle {
-        font-size: 48px;
+        font-size: $fs-xxl;
         font-weight: $fw-light;
       }
       span {
@@ -432,12 +429,12 @@ h4 {
 .icon-play {
   display: inline-flex;
   width: $base * 13;
-  height: $base *  13;
+  height: $base * 13;
   align-items: center;
   justify-content: center;
   background-color: $white;
   border-radius: 100%;
-  box-shadow: 0 $base*2 $base*12 rgba($color-primary-200, .6);
+  box-shadow: 0 $base * 2 $base * 12 rgba($color-primary-200, 0.6);
 
   svg {
     width: $base * 3;
@@ -455,7 +452,7 @@ h4 {
     padding-bottom: $padding-vertical-sm;
     justify-items: center;
     .customers__link {
-      opacity: .3;
+      opacity: 0.3;
       transition: $transition;
 
       &:hover {
@@ -505,7 +502,7 @@ h4 {
 // === FEATURES ===
 
 .section-features {
-  background-image: url('../img/bg-feature-clouds.svg');
+  background-image: url("../img/bg-feature-clouds.svg");
   background-position: 50% 50%;
   background-repeat: no-repeat;
 
@@ -522,28 +519,28 @@ h4 {
   @include list-null;
 
   display: flex;
-  margin: 0 0 $base*25;
+  margin: 0 0 $base * 25;
   text-align: center;
 
   &__item {
     $margin-left: $base * 10;
     $divider-width: $base * 7;
 
-    position:relative;
+    position: relative;
     flex-basis: 25%;
 
-    &:not(:first-child){
-      margin-left: $base*10;
+    &:not(:first-child) {
+      margin-left: $base * 10;
     }
     &:not(:first-child)::before {
       position: absolute;
-      top: $base* 30;
+      top: $base * 30;
       right: 100%;
       left: -$divider-width - ($margin-left - $divider-width)/2;
       width: $divider-width;
       height: 1px;
       background-color: $color-primary-100;
-      content: '';
+      content: "";
     }
 
     &-icon {
@@ -560,7 +557,7 @@ h4 {
     &-title {
       margin-bottom: $base * 7;
       color: $color-secondary-800;
-      font-size: $fs-md;
+      font-size: $fs-s;
       font-weight: $fw-bold;
     }
 
@@ -573,25 +570,25 @@ h4 {
 .or-block {
   display: inline-flex;
   align-items: center;
-  margin:0 $base*4;
-  font-size: $fs-sm;
+  margin: 0 $base * 4;
+  font-size: $fs-xs;
   font-weight: $fw-medium;
 
   &::before,
-  &::after{
+  &::after {
     display: block;
-    width: $base*4;
+    width: $base * 4;
     height: 1px;
     background-color: $color-secondary-50;
-    content: '';
+    content: "";
   }
 
-  &::before{
-    margin-right: $base*4;
+  &::before {
+    margin-right: $base * 4;
   }
 
-  &::after{
-    margin-left: $base*4;
+  &::after {
+    margin-left: $base * 4;
   }
 }
 // === / FEATURES ===
@@ -599,6 +596,7 @@ h4 {
 // === STATS ===
 .section-stats {
   display: flex;
+  padding: 0;
   background-color: $color-secondary-50;
   &__left,
   &__right {
@@ -606,33 +604,32 @@ h4 {
     display: flex;
     flex-basis: 50%;
     flex-direction: column;
-    padding: $base*16 $base*22;
+    padding: $base * 16 $base * 22;
   }
 
   &__left {
     align-items: flex-end;
     background-color: $color-secondary-700;
-    color:$white;
+    color: $white;
     text-align: right;
   }
 
   &__right {
-    color:  $color-secondary-300;
+    color: $color-secondary-300;
   }
 
   &__icon {
-    margin-bottom: $base*6;
+    margin-bottom: $base * 6;
   }
 
   &__number {
-    margin-bottom: $base*7;
-    font-size: $fs-xl;
-
+    margin-bottom: $base * 7;
+    font-size: $fs-xxl;
   }
 
   &__text {
     width: 35%;
-    font-size: $fs-lg;
+    font-size: $fs-m;
     font-weight: $fw-medium;
     line-height: 1.5;
   }
@@ -646,7 +643,7 @@ h4 {
 
 .slider-wrapper {
   position: relative;
-  margin-bottom: $base*25;
+  margin-bottom: $base * 25;
 }
 
 .slider-blog {
@@ -655,11 +652,11 @@ h4 {
   border: 1px solid $color-primary-100;
 
   background-color: $white;
-  box-shadow: 0 $base*4 $base*12 $color-primary-100;
+  box-shadow: 0 $base * 4 $base * 12 $color-primary-100;
 
   &__item {
     display: flex;
-    padding: $base*16 $base*8;
+    padding: $base * 16 $base * 8;
 
     &-gallery,
     &-content {
@@ -668,8 +665,8 @@ h4 {
 
     &-gallery {
       display: grid;
-      grid-gap: $base*3;
-      grid-template-columns: repeat(3, );
+      grid-gap: $base * 3;
+      grid-template-columns: repeat(3);
       grid-template-rows: repeat(2, 120px);
 
       .image-link {
@@ -684,8 +681,8 @@ h4 {
           top: 50%;
           left: 50%;
           display: block;
-          width: $base*16;
-          height: $base*16;
+          width: $base * 16;
+          height: $base * 16;
           background: $white url("../img/icon-loupe.svg") no-repeat 50% 50%;
           border-radius: 100%;
           content: "";
@@ -695,7 +692,7 @@ h4 {
         }
 
         &:hover::after {
-            opacity: 1;
+          opacity: 1;
         }
 
         img {
@@ -712,26 +709,25 @@ h4 {
           left: 0;
           content: "";
           opacity: 0.7;
-
         }
         &--b {
           grid-column: 1 / 3;
           grid-row: 1 / 3;
-          &::before{
+          &::before {
             background: linear-gradient(transparent, $color-warning);
           }
         }
         &--s-1 {
           grid-column: 3 / 4;
           grid-row: 1 / 2;
-          &::before{
+          &::before {
             background: linear-gradient(transparent, $color-danger-500);
           }
         }
         &--s-2 {
           grid-column: 3 / 4;
-          grid-row: 2 / 3 ;
-          &::before{
+          grid-row: 2 / 3;
+          &::before {
             background: linear-gradient(transparent, $color-cyan);
           }
         }
@@ -740,30 +736,30 @@ h4 {
     &-content {
       margin-left: 10%;
       .text {
-        margin-bottom: $base*10;
-        font-size: $fs-md;
+        margin-bottom: $base * 10;
+        font-size: $fs-s;
         line-height: 2;
       }
     }
   }
 }
 .btn-blog {
-  position:absolute;
+  position: absolute;
   top: 50%;
   display: block;
-  width: $base*10;
-  height: $base*10;
-  background: url('../img/icon-slider-arrow.svg') no-repeat 50% 50%;
+  width: $base * 10;
+  height: $base * 10;
+  background: url("../img/icon-slider-arrow.svg") no-repeat 50% 50%;
 
   &--prev {
     right: 100%;
-    margin-right: $base*16;
+    margin-right: $base * 16;
     transform: translateY(-50%);
   }
 
   &--next {
     left: 100%;
-    margin-left: $base*16;
+    margin-left: $base * 16;
     transform: translateY(-50%) rotate(180deg);
   }
 }
@@ -776,7 +772,7 @@ h4 {
   .section-inner {
     display: flex;
     justify-content: space-between;
-   }
+  }
   &__left,
   &__right {
     flex-basis: 45%;
@@ -784,7 +780,7 @@ h4 {
 
   &__left {
     .section-subtitle {
-      font-size: $base*9;
+      font-size: $base * 9;
     }
     .text {
       line-height: 2;
@@ -794,27 +790,27 @@ h4 {
 
 .slider-quotes {
   @include list-null;
-  margin-bottom: $base*20;
+  margin-bottom: $base * 20;
 
   &__item {
     position: relative;
-    padding: $base*10 $base*17 $base*15;
+    padding: $base * 10 $base * 17 $base * 15;
     border: 1px solid $color-primary-100;
     background-color: $white;
     box-shadow: 0 5px 50px $color-primary-100;
     &-text {
       color: $color-primary-700;
-      font-size: $fs-md;
+      font-size: $fs-s;
       line-height: 2;
     }
     &-photo {
-      $height:$base*15;
+      $height: $base * 15;
 
       position: absolute;
-      top:100%;
+      top: 100%;
       left: 50%;
       overflow: hidden;
-      width: $base*15;
+      width: $base * 15;
       height: $height;
       margin-top: -$height/2;
       background-color: $white;
@@ -830,18 +826,17 @@ h4 {
   h4 {
     font-weight: $fw-medium;
   }
- }
+}
 
- .faq-accordion {
-   @include list-null();
+.faq-accordion {
+  @include list-null();
 
-   &__item {
+  &__item {
     $parent: &;
 
     border-bottom: 1px solid $color-primary-100;
 
     &--active {
-
       #{$parent}-triger {
         color: $color-primary-900;
         font-weight: $fw-medium;
@@ -860,51 +855,50 @@ h4 {
       }
     }
 
-    &-triger{
+    &-triger {
       display: flex;
-      padding: $base*4;
+      padding: $base * 4;
       cursor: pointer;
 
-      &-icon{
-        width: $base*4;
-        margin-right: $base*4;
+      &-icon {
+        width: $base * 4;
+        margin-right: $base * 4;
         text-align: center;
         transform: rotate(180deg);
         .faq-arrow {
-          stroke:$color-primary-400;
+          stroke: $color-primary-400;
         }
       }
 
-      &-text{
-        font-size: $fs-md;
+      &-text {
+        font-size: $fs-s;
       }
     }
 
-    &-content{
+    &-content {
       display: none;
-      padding: 0 $base*4 $base*4 $base*12;
+      padding: 0 $base * 4 $base * 4 $base * 12;
 
       &-text {
         flex-grow: 1;
-        font-size: $fs-md;
+        font-size: $fs-s;
         line-height: 2;
       }
 
       &-btn {
-        margin-left: $base*15;
+        margin-left: $base * 15;
       }
     }
-   }
-
- }
+  }
+}
 // === / FAQ ===
 
 // === GET-START ===
 .section-get-start {
-  position:relative;
+  position: relative;
   background: linear-gradient($color-secondary-700, $color-secondary-800);
   color: $white;
-  text-align:center;
+  text-align: center;
   &::before {
     position: absolute;
     z-index: 5;
@@ -914,10 +908,10 @@ h4 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../img/clouds.svg') no-repeat 50% 50%;
+    background: url("../img/clouds.svg") no-repeat 50% 50%;
     content: "";
   }
-  .section-inner{
+  .section-inner {
     position: relative;
     z-index: 10;
   }
@@ -929,43 +923,42 @@ h4 {
   h3 {
     font-weight: $fw-light;
   }
-  h3 span{
+  h3 span {
     font-weight: $fw-medium;
   }
   .text {
     max-width: 60%;
-    margin: 0 auto $base*10;
+    margin: 0 auto $base * 10;
     line-height: 2;
   }
 }
 
-
 // === / GET-START ===
 // === NEWSLETTER ===
-.section-newsletter{
+.section-newsletter {
   background-color: $color-primary-50;
   .section-inner {
     display: flex;
     justify-content: space-between;
   }
-  &__left{
+  &__left {
     flex-basis: 35%;
 
-    &-title{
+    &-title {
       @include quicksand();
 
-      margin-bottom: $base*4;
+      margin-bottom: $base * 4;
       color: $color-secondary-900;
-      font-size: $fs-lg;
+      font-size: $fs-m;
       font-weight: $fw-bold;
     }
 
-    &-text{
-      font-size: $fs-md;
+    &-text {
+      font-size: $fs-s;
       line-height: 2;
     }
   }
-  &__right{
+  &__right {
     flex-basis: 55%;
   }
 
@@ -976,7 +969,7 @@ h4 {
       flex-grow: 1;
     }
     &__btn {
-      margin-left: $base*3;
+      margin-left: $base * 3;
     }
   }
 }
@@ -996,7 +989,7 @@ h4 {
   margin-top: $base * 7;
   margin-left: $base * 24;
   color: $color-primary-300;
-  font-size: $fs-sm;
+  font-size: $fs-xs;
   font-weight: $fw-medium;
 }
 // === / FOOTER ===
