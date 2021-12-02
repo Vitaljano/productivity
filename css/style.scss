@@ -21,6 +21,17 @@ $fw-regular: 400;
 $fw-medium: 500;
 $fw-bold: 700;
 
+$breakpoint-sm-min: 576px;
+$breakpoint-xs-max: $breakpoint-sm-min - 1px;
+$breakpoint-md-min: 768px;
+$breakpoint-sm-max: $breakpoint-md-min - 1px;
+$breakpoint-lg-min: 992px;
+$breakpoint-md-max: $breakpoint-lg-min - 1px;
+$breakpoint-xl-min: 1200px;
+$breakpoint-lg-max: $breakpoint-xl-min - 1px;
+$breakpoint-xxl-min: 1400px;
+$breakpoint-xl-max: $breakpoint-xxl-min - 1px;
+
 $fs-xxs: 10px;
 $fs-xs: 13px;
 $fs-s: 15px;
@@ -308,6 +319,78 @@ h4 {
 .main-navigation {
   display: flex;
   align-items: center;
+
+  &__wrapper-inner {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    margin-left: $base * 10;
+
+    .section-header & {
+      @media(max-width: $breakpoint-md-max){
+
+          display: none;
+        }
+    }
+
+    .section-footer & {
+      @media(max-width: $breakpoint-md-max){
+          flex-direction: column;
+          justify-content: center;
+          &,
+          .socials,
+          .btn-wrapper {
+            margin-top: $base*5;
+            margin-left: 0;
+          }
+
+          .nav {
+            margin-left: 0;
+
+            .nav-wrapper {
+              @media(max-width: $breakpoint-xs-max){
+                flex-direction: column;
+                align-items: center;
+                &__item {
+                  margin-top: $base*2;
+                  margin-left: 0;
+                }
+              }
+
+            }
+          }
+        }
+
+    }
+
+
+  }
+  .section-footer &{
+    @media(max-width: $breakpoint-md-max){
+      flex-direction: column;
+    }
+  }
+
+}
+.btn-burger {
+    display: none;
+    margin-left:  auto;
+
+    &__line {
+      display: block;
+      width: $base * 5;
+      height: $base /2;
+      background: $color-primary-600;
+
+      & + & {
+        margin-top: $base;
+      }
+    }
+    @media (max-width: $breakpoint-md-max) {
+      display: block;
+    }
+
+
 }
 
 .logo {
@@ -812,10 +895,9 @@ h4 {
       overflow: hidden;
       width: $base * 15;
       height: $height;
-      margin-top: -$height/2;
       background-color: $white;
       border-radius: 100%;
-      transform: translateX(-50%);
+      transform: translate(-50%, -$height/2);
     }
   }
 }
@@ -991,5 +1073,10 @@ h4 {
   color: $color-primary-300;
   font-size: $fs-xs;
   font-weight: $fw-medium;
+
+  @media (max-width: $breakpoint-md-max){
+    margin-left: 0;
+    text-align: center;
+  }
 }
 // === / FOOTER ===
