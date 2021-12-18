@@ -50,9 +50,6 @@ $fs-l: rem(24px);
 $fs-xl: rem(36px);
 $fs-xxl: rem(48px);
 
-$padding-vertical-xs: $base * 5;
-$padding-vertical-sm: $base * 15;
-$padding-vertical: $base * 30;
 
 $transition: 0.2s;
 
@@ -119,11 +116,35 @@ body {
 
 .section-inner {
   max-width: 900px;
-  padding-top: $padding-vertical;
-  padding-bottom: $padding-vertical;
   margin: 0 auto;
   &--wide {
     max-width: 1200px;
+  }
+}
+
+.vertical-indent {
+  &--s{
+    padding-top: $base * 5;
+    padding-bottom: $base * 5;
+  }
+  &--m{
+    padding-top: $base * 15;
+    padding-bottom: $base * 15;
+  }
+  &--l{
+    padding-top: $base * 30;
+    padding-bottom: $base * 30;
+  }
+
+  @media (max-width: $breakpoint-lg-max) {
+    &--m{
+      padding-top: $base * 10;
+      padding-bottom: $base * 10;
+    }
+    &--l{
+      padding-top: $base * 20;
+      padding-bottom: $base * 20;
+    }
   }
 }
 
@@ -329,10 +350,7 @@ h4 {
 // === HEADER ===
 .section-header {
   position: relative;
-  .section-inner {
-    padding-top: $padding-vertical-xs;
-    padding-bottom: $padding-vertical-xs;
-  }
+
 }
 
 .main-navigation {
@@ -561,8 +579,6 @@ h4 {
   .section-inner {
     display: flex;
     justify-content: space-between;
-    padding-top: $padding-vertical-sm;
-    padding-bottom: $padding-vertical-sm;
     justify-items: center;
     .customers__link {
       opacity: 0.3;
@@ -638,6 +654,11 @@ h4 {
   display: flex;
   margin: 0 0 $base * 25;
   text-align: center;
+
+
+  @media (max-width: $breakpoint-lg-max) {
+    margin-bottom: $base * 15;
+  }
 
   &__item {
     $margin-left: $base * 10;
@@ -764,6 +785,10 @@ h4 {
 .slider-wrapper {
   position: relative;
   margin-bottom: $base * 25;
+
+  @media (max-width: $breakpoint-lg-max) {
+    margin-bottom: $base * 15;
+  }
 }
 
 .slider-blog {
@@ -1070,6 +1095,10 @@ h4 {
   .section-inner {
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: $breakpoint-lg-max) {
+      flex-direction: column;
+    }
   }
   &__left {
     flex-basis: 35%;
@@ -1086,6 +1115,10 @@ h4 {
     &-text {
       font-size: $fs-s;
       line-height: 2;
+    }
+
+    @media (max-width: $breakpoint-lg-max) {
+      margin-bottom: $base*5;
     }
   }
   &__right {
@@ -1108,10 +1141,7 @@ h4 {
 // === FOOTER ===
 .section-footer {
   border-bottom: 0;
-  .section-inner {
-    padding-top: $padding-vertical-sm;
-    padding-bottom: $padding-vertical-sm;
-  }
+
 }
 
 .copyright {
