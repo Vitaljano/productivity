@@ -588,6 +588,15 @@ h4 {
         opacity: 1;
       }
     }
+    @media (max-width: $breakpoint-xs-max) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .customers__link{
+      margin-top: $base * 3;
+      margin-bottom: $base * 3;
+      flex-basis: 45%;
+    }
   }
 }
 
