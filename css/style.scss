@@ -631,6 +631,14 @@ h4 {
     @media(min-width: $breakpoint-lg-min){
       width: 50%;
     }
+
+    @media (max-width: $breakpoint-xs-max) {
+      width:  70%;
+      .aside-image {
+        left: 40%;
+      }
+    }
+
   }
   .btn-group {
     svg {
@@ -665,8 +673,14 @@ h4 {
   text-align: center;
 
 
-  @media (max-width: $breakpoint-lg-max) {
+  @media (max-width: $breakpoint-md-max) {
     margin-bottom: $base * 15;
+  }
+
+  @media(max-width: $breakpoint-xs-max){
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: $base * 5;
   }
 
   &__item {
@@ -676,20 +690,33 @@ h4 {
     position: relative;
     flex-basis: 25%;
 
-    &:not(:first-child) {
+  & + & {
       margin-left: $base * 10;
-    }
-    &:not(:first-child)::before {
-      position: absolute;
-      top: $base * 30;
-      right: 100%;
-      left: -$divider-width - ($margin-left - $divider-width)/2;
-      width: $divider-width;
-      height: 1px;
-      background-color: $color-primary-100;
-      content: "";
+
+      &::before {
+        position: absolute;
+        top: $base * 30;
+        right: 100%;
+        left: -$divider-width - ($margin-left - $divider-width)/2;
+        width: $divider-width;
+        height: 1px;
+        background-color: $color-primary-100;
+        content: "";
+      }
+
+      @media(max-width: $breakpoint-xs-max){
+        margin-bottom: $base * 10;
+        margin-left: 0;
+
+        &::before{
+          display: none;
+        }
+      }
     }
 
+    @media(max-width: $breakpoint-xs-max){
+      flex-basis: 45%;
+    }
     &-icon {
       display: flex;
       width: $base * 17;
@@ -711,7 +738,13 @@ h4 {
     &-text {
       line-height: 2;
     }
+    @media(max-width: $breakpoint-xs-max){
+      &-icon { margin-bottom: $base * 4;}
+      &-title { margin-bottom: $base * 3;}
+    }
+
   }
+
 }
 
 .or-block {
