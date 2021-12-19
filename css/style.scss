@@ -588,14 +588,15 @@ h4 {
         opacity: 1;
       }
     }
-    @media (max-width: $breakpoint-xs-max) {
+    @media (max-width: $breakpoint-md-max) {
       flex-wrap: wrap;
       justify-content: center;
-    }
-    .customers__link{
-      margin-top: $base * 3;
-      margin-bottom: $base * 3;
-      flex-basis: 45%;
+
+      .customers__link{
+        flex-basis: 45%;
+        margin-top: $base * 3;
+        margin-bottom: $base * 3;
+      }
     }
   }
 }
@@ -816,6 +817,12 @@ h4 {
       width: 40%;
     }
   }
+  @media(max-width: $breakpoint-xs-max){
+    &__left,
+    &__right {
+      padding: $base * 8 $base * 10;
+    }
+  }
 }
 // === / STATS ===
 
@@ -933,6 +940,20 @@ h4 {
         margin-bottom: $base * 10;
         font-size: $fs-s;
         line-height: 2;
+      }
+    }
+    @media(max-width: $breakpoint-xs-max){
+      flex-direction: column;
+      // padding: $base * 6;
+      &-content{
+        position: relative;
+        z-index: 5;
+        margin-top: $base * 6;
+        margin-left: 0;
+      }
+
+      h3 {
+        margin-bottom: $base * 3;
       }
     }
   }
